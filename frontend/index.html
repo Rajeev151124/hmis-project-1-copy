@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HMIS Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>HMIS System</h1>
+
+<div class="nav">
+  <button onclick="showPatient()">Patient</button>
+  <button onclick="showVisit()">Visit</button>
+</div>
+
+<!-- Patient Screen -->
+<div id="patientScreen">
+  <h2>Patient Registration</h2>
+
+  <input id="pname" placeholder="Name">
+  <input id="page" placeholder="Age">
+  <input id="pgender" placeholder="Gender">
+  <button onclick="addPatient()">Save Patient</button>
+
+  <h3>Patient List</h3>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ID</th><th>Name</th><th>Age</th><th>Gender</th>
+      </tr>
+    </thead>
+    <tbody id="patientTable"></tbody>
+  </table>
+</div>
+
+<!-- Visit Screen -->
+<div id="visitScreen" style="display:none;">
+  <h2>Visit Entry</h2>
+
+  <select id="vpatientId">
+    <option value="">Select Patient</option>
+  </select>
+
+  <input id="vdoctor" placeholder="Doctor">
+  <input id="vdate" placeholder="Date">
+  <button onclick="addVisit()">Save Visit</button>
+
+  <h3>Visit List</h3>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Patient</th><th>Doctor</th><th>Date</th>
+      </tr>
+    </thead>
+    <tbody id="visitTable"></tbody>
+  </table>
+</div>
+
+<!-- Cache busting -->
+<script src="app.js?v=8"></script>
+
+</body>
+</html>
