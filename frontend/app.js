@@ -22,7 +22,8 @@ async function addPatient() {
     const data = {
       name: document.getElementById("pname").value,
       age: document.getElementById("page").value,
-      gender: document.getElementById("pgender").value
+      gender: document.getElementById("pgender").value,
+      disease: document.getElementById("pdisease").value	    
     };
 
     const res = await fetch(`/patients`, {
@@ -38,6 +39,7 @@ async function addPatient() {
     document.getElementById("pname").value = "";
     document.getElementById("page").value = "";
     document.getElementById("pgender").value = "";
+    document.getElementById("pdisease").value = "";	  
 
     loadPatients();
 
@@ -63,6 +65,7 @@ async function loadPatients() {
           <td>${p.name}</td>
           <td>${p.age}</td>
           <td>${p.gender}</td>
+	  <td>${p.disease || ""}</td>
         </tr>
       `;
     });

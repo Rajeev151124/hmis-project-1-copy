@@ -11,7 +11,8 @@ mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost:27017/hmis');
 const PatientSchema = new mongoose.Schema({
     name: String,
     age: Number,
-    gender: String
+    gender: String,
+    disease: String   // 👈 NEW FIELD	
 });
 
 const Patient = mongoose.model('Patient', PatientSchema);
